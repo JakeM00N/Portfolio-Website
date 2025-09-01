@@ -1,0 +1,168 @@
+/* About Section */
+.about {
+  padding: 100px 0 100px; /* leave space equal to navbar height */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  gap: 60px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.about-text {
+  flex: 1 1 500px;
+  min-width: 300px;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #000000;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: hidden;
+  border-radius: 12px;
+  max-height: 450px;
+  width: 100%;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Tools Section */
+.tools {
+  height: 600px; /* fixed height */
+  padding: 60px 0; /* adjust padding so content fits */
+  overflow-y: auto; /* allow scrolling if content overflows */
+}
+
+
+.tools h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #000000;
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
+}
+
+.tools-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.tool {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #000000;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+}
+
+.tool img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+
+/* --- Responsive Styles --- */
+
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column; /* stack vertically */
+    align-items: center; /* center items */
+    text-align: center; /* center text under image */
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  /* Put image on top, text below */
+  .about-image {
+    order: -1;
+  }
+
+  .about-text {
+    flex: unset;
+    min-width: unset;
+  }
+
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 80px 0;
+  }
+
+  .about-text h1 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .about-container {
+    gap: 30px;
+  }
+
+  .tools h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .tool {
+    width: 100%; /* make tools take full width */
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .tool img {
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+  .tools {
+    padding: 80px 0;
+  }
+}

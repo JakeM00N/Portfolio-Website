@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Jake Mondejar</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <!-- Logo/Icon -->
+      <a href="index.html" class="logo">
+        <img src="Newlgo-01.svg" alt="Logo" />
+      </a>
+  
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">&#9776;</div>
+  
+      <!-- Nav Links -->
+      <ul id="nav-links">
+        <li><a href="index.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-container">
+        <h1>Contact Me</h1>
+        <p>Have a project or idea? I’d love to hear from you! Fill out the form below or reach me through social links.</p>
+
+        <!-- Contact Form -->
+        <form action="https://formspree.io/f/yourformid" method="POST" class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+
+        
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h2 class="footer-header">Thanks for stopping by, let's chat!</h2>
+        
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/in/jake-mondejar-209846377" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://twitter.com/JakeMonde509" target="_blank" rel="noopener noreferrer">X</a></li>
+          <li><a href="https://www.onlinejobs.ph/jobseekers/info/4360412" target="_blank" rel="noopener noreferrer">OnlineJobs.ph</a></li>
+          <li><a href="https://www.youtube.com/@JAM_Graphics" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+        </ul>
+        <p>© 2025 Jake Mondejar · All Rights Reserved</p>
+      </div>
+  
+      <div class="footer-right">
+        <img src="Name.svg" alt="Footer Image" />
+      </div>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+  <script src="popup.js"></script>
+  <script src="hamberger.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis/bundled/lenis.min.js"></script>
+  <script src="lenis.js"></script>
+
+  <script src="animations.js"></script>
+</body>
+</html>
