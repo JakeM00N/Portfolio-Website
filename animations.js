@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 // --- PAGE LOAD (ONLY HERO TEXT NOW) ---
 gsap.from(".hero-text", {
-  duration: 1.2,
+  duration: 1.3,
   y: 50,
   opacity: 0,
   ease: "power3.out",
@@ -45,7 +45,7 @@ gsap.utils.toArray(".project-container").forEach((section) => {
 gsap.from(".about-container", {
   y: -90,      // start slightly above
   opacity: 0,  // start invisible
-  duration: 1.2, // animation duration
+  duration: 1.3, // animation duration
   ease: "power3.out",
 });
 
@@ -137,3 +137,4 @@ gsap.utils.toArray(".before-after-images").forEach((container) => {
 // --- ENSURE SCROLLTRIGGER UPDATES ---
 ScrollTrigger.addEventListener("refresh", () => lenis?.resize?.());
 ScrollTrigger.refresh();
+
