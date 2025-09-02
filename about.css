@@ -57,7 +57,7 @@
 
 /* Tools Section */
 .tools {
-  height: 600px; /* fixed height */
+  height: 500px; /* fixed height */
   padding: 60px 0; /* adjust padding so content fits */
   overflow-y: auto; /* allow scrolling if content overflows */
 }

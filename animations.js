@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 // --- HERO TEXT ---
 const heroText = document.querySelector(".hero-text");
@@ -10,7 +10,27 @@ if (heroText) {
     ease: "power3.out",
   });
 }
-
+// Parallax effect
+gsap.to(".hero-bg1", {
+  y: 100, // moves background down as you scroll
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".project-page-hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+gsap.to(".hero-bg2", {
+  y: 100, // moves background down as you scroll
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".project-page-hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+});
 // --- PROJECT SECTIONS ---
 gsap.utils.toArray(".project-container").forEach((section) => {
   if (!section) return;
@@ -55,14 +75,26 @@ gsap.utils.toArray(".project-container").forEach((section) => {
   }
 });
 
+// For simple animations not dependent on scroll
 document.addEventListener("DOMContentLoaded", () => {
   const about = document.querySelector(".about-container");
   if (about) {
     gsap.from(about, {
-      y: 90,        // start 90px down
-      opacity: 0,   // start invisible
-      duration: 1,  // animation duration
-      ease: "power3.out"
+      y: 90,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const about = document.querySelector(".tools-container");
+  if (about) {
+    gsap.from(about, {
+      y: 90,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
     });
   }
 });
@@ -89,50 +121,12 @@ if (contact) {
   );
 }
 
-// --- TOOLS SECTION ---
-const toolsTitle = document.querySelector(".tools h2");
-if (toolsTitle) {
-  gsap.fromTo(
-    toolsTitle,
-    { y: 80, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".tools",
-        start: "top 90%",
-        end: "top 40%",
-        scrub: true,
-      },
-      ease: "power3.out",
-    }
-  );
-}
-
-const toolsItems = gsap.utils.toArray(".tool");
-if (toolsItems.length > 0) {
-  gsap.fromTo(
-    toolsItems,
-    { y: 150, opacity: 0 },
-    {
-      y: 0,
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".tools",
-        start: "top 90%",
-        end: "top 40%",
-        scrub: true,
-      },
-      stagger: 0.1,
-      ease: "power3.out",
-    }
-  );
-}
-
 window.addEventListener("load", () => {
   // --- PROJECT PAGE HERO ---
   const heroElements = [
-    ...gsap.utils.toArray(".project-page-hero h1, .project-page-hero p, .video-wrapper, .project-page-content h2, .project-page-content p")
+    ...gsap.utils.toArray(
+      ".project-page-hero h1, .project-page-hero p, .video-wrapper, .project-page-content h2, .project-page-content p"
+    ),
   ];
 
   heroElements.forEach((el) => {
@@ -179,8 +173,6 @@ window.addEventListener("load", () => {
     });
   });
 });
-
-
 
 // --- SCROLLTRIGGER REFRESH ---
 setTimeout(() => {
