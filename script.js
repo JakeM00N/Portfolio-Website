@@ -1,4 +1,19 @@
 // Select all nav links
+const gmailPill = document.getElementById("gmail-pill");
+const email = gmailPill.textContent;
+
+gmailPill.addEventListener("click", () => {
+  navigator.clipboard.writeText(email).then(() => {
+    // Show temporary feedback
+    gmailPill.textContent = "Copied!";
+    setTimeout(() => {
+      gmailPill.textContent = email; // revert back
+    }, 1500);
+  }).catch((err) => {
+    console.error("Failed to copy: ", err);
+  });
+});
+
 const navLinks = document.querySelectorAll('nav ul li a');
 
 // Select all sections

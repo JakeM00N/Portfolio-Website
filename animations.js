@@ -71,7 +71,7 @@ if (contact) {
       start: "top 85%",
       toggleActions: "play none none reset",
     },
-    y: 60,
+    y: 90,
     opacity: 0,
     duration: 1.2,
     ease: "power3.out",
