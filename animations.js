@@ -4,12 +4,14 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 const heroText = document.querySelector(".hero-text");
 if (heroText) {
   gsap.from(heroText, {
-    duration: 1.2,
+    duration: 2,
     y: 50,
     opacity: 0,
     ease: "power3.out",
+    delay: 1 // waits 2 seconds before starting
   });
 }
+
 // Parallax effect
 gsap.to(".hero-bg1", {
   y: 100, // moves background down as you scroll

@@ -1,4 +1,15 @@
 // Select all nav links
+// Show loader for 4 seconds
+const loader = document.getElementById("loader");
+const dots = document.querySelectorAll(".dots span");
+
+// Listen for animationend on the last dot
+dots[dots.length - 1].addEventListener("animationend", () => {
+  loader.style.opacity = 0; // fade out
+  loader.style.transition = "opacity 0.5s ease-out";
+  setTimeout(() => loader.style.display = "none", 500);
+});
+
 const gmailPill = document.getElementById("gmail-pill");
 const email = gmailPill.textContent;
 
