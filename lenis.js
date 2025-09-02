@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const videoWrapper = document.querySelector(".video-wrapper");
 
-  // Pause Lenis smooth scroll while hovering the video
+  
   
 
   function raf(time) {

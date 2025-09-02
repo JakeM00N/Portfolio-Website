@@ -1,10 +1,10 @@
 fetch('navbar.html')
   .then(response => response.text())
   .then(data => {
-    // Insert navbar into page
+    
     document.getElementById('navbar').innerHTML = data;
 
-    // Highlight active link
+    
     const navLinks = document.querySelectorAll('#nav-links li a');
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
 
@@ -22,7 +22,7 @@ fetch('navbar.html')
     if (hamburger && navMenu) {
       hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('show');
-        hamburger.classList.toggle('active'); // optional, for animation
+        hamburger.classList.toggle('active'); 
       });
     }
   })

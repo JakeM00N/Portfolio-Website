@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// --- HERO TEXT ---
+
 const heroText = document.querySelector(".hero-text");
 if (heroText) {
   gsap.from(heroText, {
@@ -8,13 +8,13 @@ if (heroText) {
     y: 50,
     opacity: 0,
     ease: "power3.out",
-    delay: 1 // waits 2 seconds before starting
+    delay: 1 
   });
 }
 
-// Parallax effect
+
 gsap.to(".hero-bg1", {
-  y: 100, // moves background down as you scroll
+  y: 100,
   ease: "none",
   scrollTrigger: {
     trigger: ".project-page-hero",
@@ -24,7 +24,7 @@ gsap.to(".hero-bg1", {
   },
 });
 gsap.to(".hero-bg2", {
-  y: 100, // moves background down as you scroll
+  y: 100, 
   ease: "none",
   scrollTrigger: {
     trigger: ".project-page-hero",
@@ -77,7 +77,7 @@ gsap.utils.toArray(".project-container").forEach((section) => {
   }
 });
 
-// For simple animations not dependent on scroll
+
 document.addEventListener("DOMContentLoaded", () => {
   const about = document.querySelector(".about-container");
   if (about) {
@@ -124,7 +124,7 @@ if (contact) {
 }
 
 window.addEventListener("load", () => {
-  // --- PROJECT PAGE HERO ---
+  
   const heroElements = [
     ...gsap.utils.toArray(
       ".project-page-hero h1, .project-page-hero p, .video-wrapper, .project-page-content h2, .project-page-content p"
@@ -143,7 +143,7 @@ window.addEventListener("load", () => {
             trigger: el,
             start: "top 80%",
             end: "top 60%",
-            scrub: true, // reversible animation
+            scrub: true, 
           },
         }
       );

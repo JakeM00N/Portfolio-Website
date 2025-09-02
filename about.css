@@ -1,6 +1,6 @@
 /* About Section */
 .about {
-  padding: 100px 0 100px; /* leave space equal to navbar height */
+  padding: 100px 0 100px; 
 }
 
 .about-container {
@@ -11,7 +11,7 @@
   margin: 0 auto;
   padding: 0 40px;
   gap: 60px;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  flex-wrap: wrap; 
 }
 
 .about-text {
@@ -22,7 +22,7 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: #000000;
-  text-align: justify; /* added this line */
+  text-align: justify; 
 }
 .about-text h1 {
   font-size: 3rem;
@@ -57,9 +57,9 @@
 
 /* Tools Section */
 .tools {
-  height: 500px; /* fixed height */
-  padding: 60px 0; /* adjust padding so content fits */
-  overflow-y: auto; /* allow scrolling if content overflows */
+  height: 500px; 
+  padding: 60px 0; 
+  overflow-y: auto; 
 }
 
 .tools h2 {
@@ -102,18 +102,18 @@
   vertical-align: middle;
 }
 
-/* --- Responsive Styles --- */
+
 
 @media (max-width: 1024px) {
   .about-container {
-    flex-direction: column; /* stack vertically */
-    align-items: center; /* center items */
-    text-align: center; /* center text under image */
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
     gap: 40px;
     padding: 0 20px;
   }
 
-  /* Put image on top, text below */
+  
   .about-image {
     order: -1;
   }
@@ -129,7 +129,7 @@
 
   .about-text p {
     font-size: 1rem;
-    text-align: justify; /* optional but keeps consistency */
+    text-align: justify; 
   }
 }
 
