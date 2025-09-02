@@ -1,0 +1,141 @@
+/* Project Page Hero */
+.project-page-hero {
+    background-color: #f9f9f9; /* light background for contrast */
+    padding: 100px 20px 60px 20px;
+    text-align: center;
+}
+
+.project-page-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.project-page-hero .red-text {
+    color: #ff0000; /* matches your brand red */
+}
+
+.project-page-hero p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333333;
+}
+
+/* Project Content Section */
+.project-page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* General media: images and local videos */
+.project-media img,
+.project-media video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    display: block;
+    object-fit: cover; /* ensures video fills container */
+}
+
+/* YouTube / iframe videos */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;       /* optional */
+    aspect-ratio: 16 / 9;   /* maintains correct video ratio */
+    overflow: hidden;       /* hides edges that get cropped */
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* fills container, removes black bars */
+}
+
+
+
+
+
+/* Project Description */
+.project-description {
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-description h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.project-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333333;
+}
+/* Project Content Paragraphs */
+.project-page-hero p,
+.project-page-container p,
+.project-before-after p {
+    font-size: 1.4rem;  /* consistent paragraph size */
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* Responsive project page*/
+@media (max-width: 768px) {
+    .project-page-hero p,
+    .project-page-container p,
+    .project-before-after p {
+        font-size: 1.2rem; /* consistent mobile size */
+    }
+    .project-page-hero h1 {
+        font-size: 2.2rem;
+    }
+}
+
+.project-before-after {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .before-after-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  
+  .before-after-images div {
+    flex: 1 1 45%; /* take more space */
+    max-width: 600px; /* larger maximum width */
+  }
+  
+  .before-after-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  
