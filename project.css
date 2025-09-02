@@ -1,9 +1,17 @@
 /* Project Page Hero */
 .project-page-hero {
-    background-color: #f9f9f9; /* light background for contrast */
-    padding: 100px 20px 60px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    /* remove full viewport height */
+    min-height: 80vh; 
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 20px 60px 20px; /* adjust as needed */
     text-align: center;
+    display: flex;          
+    
 }
+
 
 .project-page-hero h1 {
     font-size: 3rem;

@@ -1,34 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Make sure Lenis and ScrollTrigger are loaded
-  if (typeof Lenis === "undefined") {
-    console.error("Lenis is not loaded!");
+  if (typeof Lenis === "undefined" || typeof ScrollTrigger === "undefined") {
+    console.error("Lenis or ScrollTrigger not loaded!");
     return;
   }
 
-  if (typeof ScrollTrigger === "undefined") {
-    console.error("ScrollTrigger is not loaded!");
-    return;
-  }
-
-  // Initialize Lenis
   const lenis = new Lenis({
-    duration: 1.8, 
+    duration: 1.8,
     easing: (t) => 1 - Math.pow(1 - t, 3),
     smooth: true,
     smoothTouch: true,
     direction: "vertical",
     gestureDirection: "vertical",
-    mouseMultiplier: 1,
-    touchMultiplier: 2,
-    infinite: false,
+    wheelMultiplier: 1,
   });
 
-  // Keep ScrollTrigger in sync
-  lenis.on("scroll", () => {
-    ScrollTrigger.update();
-  });
+  const videoWrapper = document.querySelector(".video-wrapper");
 
-  // RequestAnimationFrame loop
+  // Pause Lenis smooth scroll while hovering the video
+  
+
   function raf(time) {
     lenis.raf(time);
     ScrollTrigger.update();
