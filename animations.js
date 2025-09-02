@@ -13,26 +13,36 @@ if (heroText) {
 }
 
 
-gsap.to(".hero-bg1", {
-  y: 100,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".project-page-hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-  },
-});
-gsap.to(".hero-bg2", {
-  y: 100, 
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".project-page-hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-  },
-});
+const heroBg1 = document.querySelector(".hero-bg1");
+const heroBg2 = document.querySelector(".hero-bg2");
+const projectHero = document.querySelector(".project-page-hero");
+
+if (heroBg1 && projectHero) {
+  gsap.to(heroBg1, {
+    y: 100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: projectHero,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+}
+
+if (heroBg2 && projectHero) {
+  gsap.to(heroBg2, {
+    y: 100,
+    ease: "none",
+    scrollTrigger: {
+      trigger: projectHero,
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+}
+
 // --- PROJECT SECTIONS ---
 gsap.utils.toArray(".project-container").forEach((section) => {
   if (!section) return;
@@ -79,27 +89,14 @@ gsap.utils.toArray(".project-container").forEach((section) => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const about = document.querySelector(".about-container");
-  if (about) {
-    gsap.from(about, {
-      y: 90,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }
+  [".about-container", ".tools-container"].forEach((selector) => {
+    const el = document.querySelector(selector);
+    if (el) {
+      gsap.from(el, { y: 90, opacity: 0, duration: 1, ease: "power3.out" });
+    }
+  });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const about = document.querySelector(".tools-container");
-  if (about) {
-    gsap.from(about, {
-      y: 90,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    });
-  }
-});
+
 
 
 

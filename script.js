@@ -1,67 +1,39 @@
 const loader = document.getElementById("loader");
 const dots = document.querySelectorAll(".dots span");
 
-const gmailButton = document.getElementById("gmail-pill");
-
-gmailButton.addEventListener("click", () => {
-  navigator.clipboard
-    .writeText(gmailButton.textContent)
-    .then(() => {
-      gmailButton.textContent = "Email copied!";
-      setTimeout(() => {
-        gmailButton.textContent = "jake.mondejar2320@gmail.com";
-      }, 2000);
-    })
-    .catch((err) => {
-      console.error("Failed to copy: ", err);
-    });
-});
-dots[dots.length - 1].addEventListener("animationend", () => {
-  loader.style.opacity = 0;
-  loader.style.transition = "opacity 0.5s ease-out";
-  setTimeout(() => (loader.style.display = "none"), 500);
-});
-
-const gmailPill = document.getElementById("gmail-pill");
-const email = gmailPill.textContent;
-
-gmailPill.addEventListener("click", () => {
-  navigator.clipboard
-    .writeText(email)
-    .then(() => {
-      gmailPill.textContent = "Copied!";
-      setTimeout(() => {
-        gmailPill.textContent = email;
-      }, 1500);
-    })
-    .catch((err) => {
-      console.error("Failed to copy: ", err);
-    });
-});
-
-const navLinks = document.querySelectorAll("nav ul li a");
-
-const sections = document.querySelectorAll("main section");
-
-function highlightNav() {
-  let scrollY = window.scrollY;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 80;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute("id");
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${sectionId}`) {
-          link.classList.add("active");
-        }
-      });
-    }
+if (loader && dots.length > 0) {
+  const lastDot = dots[dots.length - 1];
+  lastDot.addEventListener("animationend", () => {
+    loader.style.opacity = 0;
+    loader.style.transition = "opacity 0.5s ease-out";
+    setTimeout(() => (loader.style.display = "none"), 500);
   });
 }
 
-window.addEventListener("scroll", highlightNav);
+// NAV HIGHLIGHT
+const navLinks = document.querySelectorAll("nav ul li a");
+const sections = document.querySelectorAll("main section");
 
-highlightNav();
+if (navLinks.length > 0 && sections.length > 0) {
+  function highlightNav() {
+    let scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 80;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", highlightNav);
+  highlightNav();
+}
