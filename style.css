@@ -38,6 +38,9 @@ main {
     font-size: 13px;
   }
 }
+.hero video {
+  pointer-events: none; /* lets clicks pass through */
+}
 
 /* CSS */
 nav {
@@ -87,45 +90,73 @@ nav ul li a.active {
   color: red;
 }
 
-/* Hamburger styles */
+/* Hide hamburger on large screens */
 .hamburger {
   display: none;
-  font-size: 28px;
-  cursor: pointer;
 }
 
-/* Responsive */
+/* Default nav links layout */
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobile view */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
-  }
-
-  nav ul {
-    position: absolute;
-    top: 70px; /* below navbar */
-    left: 0;
-    width: 100%;
+    display: flex; /* show hamburger */
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
-    gap: 0;
-    display: none; /* hide by default */
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  nav ul li a{
+    color: #ffffff;
   }
 
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul li a {
+  .hamburger span {
     display: block;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 3px;
+    transition: all 0.3s ease;
   }
 
-  nav ul.show {
+  /* Hide nav links initially on mobile */
+  #nav-links {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #000000;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  #nav-links.show {
     display: flex;
   }
+
+  /* Hamburger toggle animation */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
 }
+
 
 /* Hero Section */
 .hero {
