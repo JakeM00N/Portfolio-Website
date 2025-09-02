@@ -527,12 +527,14 @@ footer p {
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #000000;
+  text-align: justify;
 }
 
 .project-text p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #000000;
+  text-align: justify;
 }
 
 .project-image {

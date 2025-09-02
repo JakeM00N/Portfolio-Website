@@ -43,6 +43,7 @@
   font-weight: 700;
   color: #000000;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .project-page-hero .red-text {
@@ -138,9 +139,12 @@
   .project-page-container p,
   .project-before-after p {
     font-size: 1.2rem; /* consistent mobile size */
+    padding: 0px 20px;
   }
   .project-page-hero h1 {
     font-size: 2.2rem;
+    text-align: center;
+    padding: 0px 20px;
   }
 }
 
