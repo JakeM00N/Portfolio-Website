@@ -42,7 +42,7 @@ main {
   pointer-events: none; /* lets clicks pass through */
 }
 
-/* CSS */
+
 nav {
   position: fixed;
   top: 0;

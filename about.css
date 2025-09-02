@@ -18,7 +18,12 @@
   flex: 1 1 500px;
   min-width: 300px;
 }
-
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #000000;
+  text-align: justify; /* added this line */
+}
 .about-text h1 {
   font-size: 3rem;
   margin-bottom: 20px;
@@ -124,6 +129,7 @@
 
   .about-text p {
     font-size: 1rem;
+    text-align: justify; /* optional but keeps consistency */
   }
 }
 
@@ -139,6 +145,7 @@
 
   .about-text p {
     font-size: 0.95rem;
+    text-align: justify; /* optional */
   }
 
   .about-container {
