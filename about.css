@@ -25,6 +25,7 @@
   text-align: justify; 
 }
 .about-text h1 {
+  font-family: "Domine", serif;
   font-size: 3rem;
   margin-bottom: 20px;
   color: #000000;
@@ -63,6 +64,7 @@
 }
 
 .tools h2 {
+  font-family: "Domine", serif;
   font-size: 2.5rem;
   margin-bottom: 60px;
   color: #000000;
@@ -85,7 +87,7 @@
   background-color: #ffffff;
   padding: 30px 40px;
   border-radius: 16px;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #000000;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
@@ -145,7 +147,7 @@
 
   .about-text p {
     font-size: 0.95rem;
-    text-align: justify; /* optional */
+    text-align: justify; 
   }
 
   .about-container {
@@ -158,9 +160,9 @@
   }
 
   .tool {
-    width: 100%; /* make tools take full width */
+    width: 100%; 
     justify-content: center;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .tool img {
