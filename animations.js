@@ -1,6 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-
 const heroText = document.querySelector(".hero-text");
 if (heroText) {
   gsap.from(heroText, {
@@ -8,10 +7,9 @@ if (heroText) {
     y: 50,
     opacity: 0,
     ease: "power3.out",
-    delay: 1 
+    delay: 1,
   });
 }
-
 
 const heroBg1 = document.querySelector(".hero-bg1");
 const heroBg2 = document.querySelector(".hero-bg2");
@@ -46,10 +44,8 @@ if (heroBg2 && projectHero) {
 // --- PROJECT SECTIONS ---
 gsap.utils.toArray(".project-container").forEach((section) => {
   if (!section) return;
-
   const text = section.querySelector(".project-text");
   const image = section.querySelector(".project-image");
-
   if (text) {
     gsap.fromTo(
       text,
@@ -67,7 +63,6 @@ gsap.utils.toArray(".project-container").forEach((section) => {
       }
     );
   }
-
   if (image) {
     gsap.fromTo(
       image,
@@ -87,7 +82,6 @@ gsap.utils.toArray(".project-container").forEach((section) => {
   }
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   [".about-container", ".tools-container"].forEach((selector) => {
     const el = document.querySelector(selector);
@@ -96,9 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
-
 
 // --- CONTACT SECTION ---
 const contact = document.querySelector(".contact-container");
@@ -121,7 +112,6 @@ if (contact) {
 }
 
 window.addEventListener("load", () => {
-  
   const heroElements = [
     ...gsap.utils.toArray(
       ".project-page-hero h1, .project-page-hero p, .video-wrapper, .project-page-content h2, .project-page-content p"
@@ -140,7 +130,7 @@ window.addEventListener("load", () => {
             trigger: el,
             start: "top 80%",
             end: "top 60%",
-            scrub: true, 
+            scrub: true,
           },
         }
       );
